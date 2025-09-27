@@ -1,0 +1,944 @@
+{
+  "products": [
+    {
+      "id": 6749667524760,
+      "title": "Example T-Shirt",
+      "handle": "example-t-shirt",
+      "body_html": "\u003cmeta charset=\"utf-8\"\u003e\u003cspan data-mce-fragment=\"1\"\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u003c\/span\u003e",
+      "published_at": "2021-05-11T14:39:46+01:00",
+      "created_at": "2021-05-11T14:39:43+01:00",
+      "updated_at": "2025-09-21T11:04:45+01:00",
+      "vendor": "Product - Multiple Options",
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "variants": [
+        {
+          "id": 39958144057496,
+          "title": "Blue \/ Small",
+          "option1": "Blue",
+          "option2": "Small",
+          "option3": null,
+          "sku": "TBS",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981139075224,
+            "product_id": 6749667524760,
+            "position": 1,
+            "created_at": "2021-05-11T14:39:47+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/cobalt-blue-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144057496,
+              39958144090264,
+              39958144123032
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144090264,
+          "title": "Blue \/ Medium",
+          "option1": "Blue",
+          "option2": "Medium",
+          "option3": null,
+          "sku": "TBM",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981139075224,
+            "product_id": 6749667524760,
+            "position": 1,
+            "created_at": "2021-05-11T14:39:47+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/cobalt-blue-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144057496,
+              39958144090264,
+              39958144123032
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144123032,
+          "title": "Blue \/ Large",
+          "option1": "Blue",
+          "option2": "Large",
+          "option3": null,
+          "sku": "TBL",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981139075224,
+            "product_id": 6749667524760,
+            "position": 1,
+            "created_at": "2021-05-11T14:39:47+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/cobalt-blue-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144057496,
+              39958144090264,
+              39958144123032
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 3,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144155800,
+          "title": "Green \/ Small",
+          "option1": "Green",
+          "option2": "Small",
+          "option3": null,
+          "sku": "TGS",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981139468440,
+            "product_id": 6749667524760,
+            "position": 3,
+            "created_at": "2021-05-11T14:39:48+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/light-green-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144155800,
+              39958144188568,
+              39958144221336
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 4,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144188568,
+          "title": "Green \/ Medium",
+          "option1": "Green",
+          "option2": "Medium",
+          "option3": null,
+          "sku": "TGM",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981139468440,
+            "product_id": 6749667524760,
+            "position": 3,
+            "created_at": "2021-05-11T14:39:48+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/light-green-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144155800,
+              39958144188568,
+              39958144221336
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 5,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144221336,
+          "title": "Green \/ Large",
+          "option1": "Green",
+          "option2": "Large",
+          "option3": null,
+          "sku": "TGL",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981139468440,
+            "product_id": 6749667524760,
+            "position": 3,
+            "created_at": "2021-05-11T14:39:48+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/light-green-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144155800,
+              39958144188568,
+              39958144221336
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 6,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144254104,
+          "title": "Purple \/ Small",
+          "option1": "Purple",
+          "option2": "Small",
+          "option3": null,
+          "sku": "TPS",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981138976920,
+            "product_id": 6749667524760,
+            "position": 2,
+            "created_at": "2021-05-11T14:39:47+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/purple-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144254104,
+              39958144286872,
+              39958144319640
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 7,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144286872,
+          "title": "Purple \/ Medium",
+          "option1": "Purple",
+          "option2": "Medium",
+          "option3": null,
+          "sku": "TPM",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981138976920,
+            "product_id": 6749667524760,
+            "position": 2,
+            "created_at": "2021-05-11T14:39:47+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/purple-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144254104,
+              39958144286872,
+              39958144319640
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 8,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958144319640,
+          "title": "Purple \/ Large",
+          "option1": "Purple",
+          "option2": "Large",
+          "option3": null,
+          "sku": "TPL",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981138976920,
+            "product_id": 6749667524760,
+            "position": 2,
+            "created_at": "2021-05-11T14:39:47+01:00",
+            "updated_at": "2021-05-11T14:39:53+01:00",
+            "alt": null,
+            "width": 2975,
+            "height": 2975,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/purple-t-shirt.jpg?v=1620740393",
+            "variant_ids": [
+              39958144254104,
+              39958144286872,
+              39958144319640
+            ]
+          },
+          "available": true,
+          "price": "11.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 9,
+          "product_id": 6749667524760,
+          "created_at": "2021-05-11T14:39:43+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 29981139075224,
+          "created_at": "2021-05-11T14:39:47+01:00",
+          "position": 1,
+          "updated_at": "2021-05-11T14:39:53+01:00",
+          "product_id": 6749667524760,
+          "variant_ids": [
+            39958144057496,
+            39958144090264,
+            39958144123032
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/cobalt-blue-t-shirt.jpg?v=1620740393",
+          "width": 2975,
+          "height": 2975
+        },
+        {
+          "id": 29981138976920,
+          "created_at": "2021-05-11T14:39:47+01:00",
+          "position": 2,
+          "updated_at": "2021-05-11T14:39:53+01:00",
+          "product_id": 6749667524760,
+          "variant_ids": [
+            39958144254104,
+            39958144286872,
+            39958144319640
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/purple-t-shirt.jpg?v=1620740393",
+          "width": 2975,
+          "height": 2975
+        },
+        {
+          "id": 29981139468440,
+          "created_at": "2021-05-11T14:39:48+01:00",
+          "position": 3,
+          "updated_at": "2021-05-11T14:39:53+01:00",
+          "product_id": 6749667524760,
+          "variant_ids": [
+            39958144155800,
+            39958144188568,
+            39958144221336
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/light-green-t-shirt.jpg?v=1620740393",
+          "width": 2975,
+          "height": 2975
+        }
+      ],
+      "options": [
+        {
+          "name": "Colour",
+          "position": 1,
+          "values": [
+            "Blue",
+            "Green",
+            "Purple"
+          ]
+        },
+        {
+          "name": "Size",
+          "position": 2,
+          "values": [
+            "Small",
+            "Medium",
+            "Large"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6749662609560,
+      "title": "Example Pin Badge",
+      "handle": "example-pin-badge",
+      "body_html": "\u003cmeta charset=\"utf-8\"\u003e\u003cspan data-mce-fragment=\"1\"\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   \u003c\/span\u003e",
+      "published_at": "2021-05-11T14:36:48+01:00",
+      "created_at": "2021-05-11T14:36:33+01:00",
+      "updated_at": "2025-09-21T11:04:45+01:00",
+      "vendor": "Product - With Pack Sizes",
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "variants": [
+        {
+          "id": 39958121644184,
+          "title": "Pineapple",
+          "option1": "Pineapple",
+          "option2": null,
+          "option3": null,
+          "sku": "BADGE-PINE",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981068230808,
+            "product_id": 6749662609560,
+            "position": 3,
+            "created_at": "2021-05-11T14:36:36+01:00",
+            "updated_at": "2021-05-11T14:36:37+01:00",
+            "alt": null,
+            "width": 2500,
+            "height": 2500,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/pineapple-enamel-pin-denim.jpg?v=1620740197",
+            "variant_ids": [
+              39958121644184
+            ]
+          },
+          "available": true,
+          "price": "9.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6749662609560,
+          "created_at": "2021-05-11T14:36:33+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958121676952,
+          "title": "Lightening",
+          "option1": "Lightening",
+          "option2": null,
+          "option3": null,
+          "sku": "BADGE-LGT",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981068591256,
+            "product_id": 6749662609560,
+            "position": 2,
+            "created_at": "2021-05-11T14:36:37+01:00",
+            "updated_at": "2021-05-11T14:36:37+01:00",
+            "alt": null,
+            "width": 2500,
+            "height": 2500,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/lightning-bolt-enamel-pin-denim.jpg?v=1620740197",
+            "variant_ids": [
+              39958121676952
+            ]
+          },
+          "available": true,
+          "price": "9.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 6749662609560,
+          "created_at": "2021-05-11T14:36:33+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958121709720,
+          "title": "Watermelon",
+          "option1": "Watermelon",
+          "option2": null,
+          "option3": null,
+          "sku": "BADGE-WATER",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981068132504,
+            "product_id": 6749662609560,
+            "position": 4,
+            "created_at": "2021-05-11T14:36:36+01:00",
+            "updated_at": "2021-05-11T14:36:37+01:00",
+            "alt": null,
+            "width": 2500,
+            "height": 2500,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/watermelon-slice-enamel-pin-denim.jpg?v=1620740197",
+            "variant_ids": [
+              39958121709720
+            ]
+          },
+          "available": true,
+          "price": "9.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 3,
+          "product_id": 6749662609560,
+          "created_at": "2021-05-11T14:36:33+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958121742488,
+          "title": "Popsicle",
+          "option1": "Popsicle",
+          "option2": null,
+          "option3": null,
+          "sku": "BADGE-POP",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981068099736,
+            "product_id": 6749662609560,
+            "position": 1,
+            "created_at": "2021-05-11T14:36:36+01:00",
+            "updated_at": "2021-05-11T14:36:36+01:00",
+            "alt": null,
+            "width": 2500,
+            "height": 2500,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/popsicle-enamel-pin-denim.jpg?v=1620740196",
+            "variant_ids": [
+              39958121742488
+            ]
+          },
+          "available": true,
+          "price": "9.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 4,
+          "product_id": 6749662609560,
+          "created_at": "2021-05-11T14:36:33+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 29981068099736,
+          "created_at": "2021-05-11T14:36:36+01:00",
+          "position": 1,
+          "updated_at": "2021-05-11T14:36:36+01:00",
+          "product_id": 6749662609560,
+          "variant_ids": [
+            39958121742488
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/popsicle-enamel-pin-denim.jpg?v=1620740196",
+          "width": 2500,
+          "height": 2500
+        },
+        {
+          "id": 29981068591256,
+          "created_at": "2021-05-11T14:36:37+01:00",
+          "position": 2,
+          "updated_at": "2021-05-11T14:36:37+01:00",
+          "product_id": 6749662609560,
+          "variant_ids": [
+            39958121676952
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/lightning-bolt-enamel-pin-denim.jpg?v=1620740197",
+          "width": 2500,
+          "height": 2500
+        },
+        {
+          "id": 29981068230808,
+          "created_at": "2021-05-11T14:36:36+01:00",
+          "position": 3,
+          "updated_at": "2021-05-11T14:36:37+01:00",
+          "product_id": 6749662609560,
+          "variant_ids": [
+            39958121644184
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/pineapple-enamel-pin-denim.jpg?v=1620740197",
+          "width": 2500,
+          "height": 2500
+        },
+        {
+          "id": 29981068132504,
+          "created_at": "2021-05-11T14:36:36+01:00",
+          "position": 4,
+          "updated_at": "2021-05-11T14:36:37+01:00",
+          "product_id": 6749662609560,
+          "variant_ids": [
+            39958121709720
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/watermelon-slice-enamel-pin-denim.jpg?v=1620740197",
+          "width": 2500,
+          "height": 2500
+        }
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "position": 1,
+          "values": [
+            "Pineapple",
+            "Lightening",
+            "Watermelon",
+            "Popsicle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6749659365528,
+      "title": "Example Handmade Bracelet",
+      "handle": "example-handmade-bracelet",
+      "body_html": "\u003cmeta charset=\"utf-8\"\u003e\u003cspan data-mce-fragment=\"1\"\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \u003c\/span\u003e",
+      "published_at": "2021-05-11T14:34:52+01:00",
+      "created_at": "2021-05-11T14:34:31+01:00",
+      "updated_at": "2025-09-21T11:04:45+01:00",
+      "vendor": "Product - With Price Breaks",
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "variants": [
+        {
+          "id": 39958106505368,
+          "title": "Gold",
+          "option1": "Gold",
+          "option2": null,
+          "option3": null,
+          "sku": "BRACE-GOLD",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981026091160,
+            "product_id": 6749659365528,
+            "position": 2,
+            "created_at": "2021-05-11T14:34:33+01:00",
+            "updated_at": "2021-05-11T14:34:34+01:00",
+            "alt": null,
+            "width": 2978,
+            "height": 2978,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/black-buddha-bracelet.jpg?v=1620740074",
+            "variant_ids": [
+              39958106505368
+            ]
+          },
+          "available": true,
+          "price": "19.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6749659365528,
+          "created_at": "2021-05-11T14:34:32+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958106538136,
+          "title": "Coloured",
+          "option1": "Coloured",
+          "option2": null,
+          "option3": null,
+          "sku": "BRACE-COLOURED",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29981026123928,
+            "product_id": 6749659365528,
+            "position": 1,
+            "created_at": "2021-05-11T14:34:34+01:00",
+            "updated_at": "2021-05-11T14:34:34+01:00",
+            "alt": null,
+            "width": 2977,
+            "height": 2977,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/chakra-bracelet.jpg?v=1620740074",
+            "variant_ids": [
+              39958106538136
+            ]
+          },
+          "available": true,
+          "price": "19.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 6749659365528,
+          "created_at": "2021-05-11T14:34:32+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 29981026123928,
+          "created_at": "2021-05-11T14:34:34+01:00",
+          "position": 1,
+          "updated_at": "2021-05-11T14:34:34+01:00",
+          "product_id": 6749659365528,
+          "variant_ids": [
+            39958106538136
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/chakra-bracelet.jpg?v=1620740074",
+          "width": 2977,
+          "height": 2977
+        },
+        {
+          "id": 29981026091160,
+          "created_at": "2021-05-11T14:34:33+01:00",
+          "position": 2,
+          "updated_at": "2021-05-11T14:34:34+01:00",
+          "product_id": 6749659365528,
+          "variant_ids": [
+            39958106505368
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/black-buddha-bracelet.jpg?v=1620740074",
+          "width": 2978,
+          "height": 2978
+        }
+      ],
+      "options": [
+        {
+          "name": "Type",
+          "position": 1,
+          "values": [
+            "Gold",
+            "Coloured"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6749656809624,
+      "title": "Example Elephant Earrings",
+      "handle": "example-elephant-earrings",
+      "body_html": "\u003cmeta charset=\"utf-8\"\u003e\u003cspan data-mce-fragment=\"1\"\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u003c\/span\u003e",
+      "published_at": "2021-05-11T14:33:02+01:00",
+      "created_at": "2021-05-11T14:33:01+01:00",
+      "updated_at": "2025-09-21T11:04:45+01:00",
+      "vendor": "Product - No Variants",
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "variants": [
+        {
+          "id": 39958095462552,
+          "title": "Default Title",
+          "option1": "Default Title",
+          "option2": null,
+          "option3": null,
+          "sku": "EEEAR",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": null,
+          "available": true,
+          "price": "14.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6749656809624,
+          "created_at": "2021-05-11T14:33:01+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 29980988637336,
+          "created_at": "2021-05-11T14:33:01+01:00",
+          "position": 1,
+          "updated_at": "2021-05-11T14:33:03+01:00",
+          "product_id": 6749656809624,
+          "variant_ids": [],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/elephant-earrings.jpg?v=1620739983",
+          "width": 2379,
+          "height": 2379
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6749654974616,
+      "title": "Example Ceramic Mug",
+      "handle": "example-ceramic-mug",
+      "body_html": "\u003cmeta charset=\"utf-8\"\u003e\u003cspan data-mce-fragment=\"1\"\u003eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u003c\/span\u003e",
+      "published_at": "2021-05-11T14:31:39+01:00",
+      "created_at": "2021-05-11T14:31:38+01:00",
+      "updated_at": "2025-09-21T11:04:45+01:00",
+      "vendor": "Product - Single Option",
+      "product_type": "",
+      "tags": [
+        "sample",
+        "user:group-1",
+        "user:visitors"
+      ],
+      "variants": [
+        {
+          "id": 39958091301016,
+          "title": "Cat Mom",
+          "option1": "Cat Mom",
+          "option2": null,
+          "option3": null,
+          "sku": "MUG-CAT",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29980957835416,
+            "product_id": 6749654974616,
+            "position": 3,
+            "created_at": "2021-05-11T14:31:40+01:00",
+            "updated_at": "2021-05-11T14:31:41+01:00",
+            "alt": null,
+            "width": 3644,
+            "height": 3644,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/cat-mom-coffee-mug.jpg?v=1620739901",
+            "variant_ids": [
+              39958091301016
+            ]
+          },
+          "available": true,
+          "price": "7.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 1,
+          "product_id": 6749654974616,
+          "created_at": "2021-05-11T14:31:38+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958091333784,
+          "title": "Best Mom",
+          "option1": "Best Mom",
+          "option2": null,
+          "option3": null,
+          "sku": "MUG-MOM",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29980958032024,
+            "product_id": 6749654974616,
+            "position": 1,
+            "created_at": "2021-05-11T14:31:40+01:00",
+            "updated_at": "2021-05-11T14:31:41+01:00",
+            "alt": null,
+            "width": 3490,
+            "height": 3490,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/best-mom-coffee-mug.jpg?v=1620739901",
+            "variant_ids": [
+              39958091333784
+            ]
+          },
+          "available": true,
+          "price": "7.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 2,
+          "product_id": 6749654974616,
+          "created_at": "2021-05-11T14:31:38+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        },
+        {
+          "id": 39958091366552,
+          "title": "No.1 Dad",
+          "option1": "No.1 Dad",
+          "option2": null,
+          "option3": null,
+          "sku": "MUG-DAD",
+          "requires_shipping": true,
+          "taxable": true,
+          "featured_image": {
+            "id": 29980957966488,
+            "product_id": 6749654974616,
+            "position": 2,
+            "created_at": "2021-05-11T14:31:40+01:00",
+            "updated_at": "2021-05-11T14:31:41+01:00",
+            "alt": null,
+            "width": 3398,
+            "height": 3398,
+            "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/1-dad-coffee-mug.jpg?v=1620739901",
+            "variant_ids": [
+              39958091366552
+            ]
+          },
+          "available": true,
+          "price": "7.99",
+          "grams": 0,
+          "compare_at_price": null,
+          "position": 3,
+          "product_id": 6749654974616,
+          "created_at": "2021-05-11T14:31:38+01:00",
+          "updated_at": "2025-09-21T11:04:45+01:00"
+        }
+      ],
+      "images": [
+        {
+          "id": 29980958032024,
+          "created_at": "2021-05-11T14:31:40+01:00",
+          "position": 1,
+          "updated_at": "2021-05-11T14:31:41+01:00",
+          "product_id": 6749654974616,
+          "variant_ids": [
+            39958091333784
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/best-mom-coffee-mug.jpg?v=1620739901",
+          "width": 3490,
+          "height": 3490
+        },
+        {
+          "id": 29980957966488,
+          "created_at": "2021-05-11T14:31:40+01:00",
+          "position": 2,
+          "updated_at": "2021-05-11T14:31:41+01:00",
+          "product_id": 6749654974616,
+          "variant_ids": [
+            39958091366552
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/1-dad-coffee-mug.jpg?v=1620739901",
+          "width": 3398,
+          "height": 3398
+        },
+        {
+          "id": 29980957835416,
+          "created_at": "2021-05-11T14:31:40+01:00",
+          "position": 3,
+          "updated_at": "2021-05-11T14:31:41+01:00",
+          "product_id": 6749654974616,
+          "variant_ids": [
+            39958091301016
+          ],
+          "src": "https:\/\/cdn.shopify.com\/s\/files\/1\/0565\/7500\/0728\/products\/cat-mom-coffee-mug.jpg?v=1620739901",
+          "width": 3644,
+          "height": 3644
+        }
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "position": 1,
+          "values": [
+            "Cat Mom",
+            "Best Mom",
+            "No.1 Dad"
+          ]
+        }
+      ]
+    }
+  ]
+}

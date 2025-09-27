@@ -1,61 +1,63 @@
 import sys
 import json
+import os
 import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
-import os
 
+# Resolve paths relative to this file to avoid cwd issues when spawned from Node
+CUR = os.path.dirname(os.path.abspath(__file__))                   # .../data-extraction
+INDEX_DIR = os.path.join(CUR, 'database')                          # .../data-extraction/database
+INDEX_PATH = os.path.normpath(os.path.join(INDEX_DIR, 'faiss.index'))
+META_PATH  = os.path.normpath(os.path.join(INDEX_DIR, 'chunks_metadata.json'))
 
-CUR = os.path.dirname(os.path.abspath(__file__))             # .../ai-assistance/data-extraction
-INDEX_DIR = os.path.join(CUR, 'database')
+MODEL_NAME = 'sentence-transformers/all-MiniLM-L6-v2'  # fast, good quality embeddings [web:291]
+
+def load_index_and_meta():
+    if not os.path.exists(INDEX_PATH):
+        raise FileNotFoundError(f"Missing index file: {INDEX_PATH}")
+    if not os.path.exists(META_PATH):
+        raise FileNotFoundError(f"Missing metadata file: {META_PATH}")
+    index = faiss.read_index(INDEX_PATH)  # FlatIP with normalized embeddings ≈ cosine similarity [web:549]
+    with open(META_PATH, 'r', encoding='utf-8') as f:
+        meta = json.load(f)
+    return index, meta
+
+def embed_query(model, text):
+    vec = model.encode([text], normalize_embeddings=True)  # normalize for cosine via inner product [web:291][web:549]
+    return np.asarray(vec, dtype='float32')
 
 def search_knowledge_base(query, top_k=5):
     try:
-        # Load FAISS index and metadata
-        idx_path=os.path.join(INDEX_DIR, 'faiss.index')
-        meta_path = os.path.join(INDEX_DIR, 'chunks_metadata.json')
-        idx_path = os.path.normpath(idx_path)
-        meta_path = os.path.normpath(meta_path)
-        index = faiss.read_index(idx_path)
-        with open(meta_path, 'r', encoding='utf-8') as f:
-            chunks = json.load(f)
-        
-        # Load model (same as used for indexing)
-        model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-        
-        # Create query embedding
-        query_embedding = model.encode([query], normalize_embeddings=True)
-        query_embedding = np.array(query_embedding, dtype=np.float32)
-        
-        # Search
-        scores, indices = index.search(query_embedding, top_k)
-        
-        results = []
-        for score, idx in zip(scores[0], indices[0]):
-            if idx != -1 and idx < len(chunks):
-                chunk = chunks[idx]
-                result = {
-                    'text': chunk['text'],
-                    'url': chunk['url'],
-                    'title': chunk['title'],
-                    'page_type': chunk['page_type'],
-                    'score': float(score),
-                    'product_info': chunk.get('product_info', {})
-                }
-                results.append(result)
-        
-        return results
-        
+        index, meta = load_index_and_meta()
+        model = SentenceTransformer(MODEL_NAME)
+        qv = embed_query(model, query)
+        D, I = index.search(qv, int(top_k))
+        out = []
+        # Map FAISS indices to metadata rows; guard bounds
+        for idx, score in zip(I[0].tolist(), D[0].tolist()):
+            if idx == -1 or idx >= len(meta):
+                continue
+            m = meta[idx]
+            out.append({
+                'text': m.get('text', ''),
+                'url': m.get('url', ''),
+                'title': m.get('title', ''),
+                'page_type': m.get('page_type', ''),
+                'score': float(score),
+                'product_info': m.get('product_info', {})
+            })
+        return out
     except Exception as e:
+        # Return a JSON object with error message; caller should treat non-array as error
         return {'error': str(e)}
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    # CLI usage: python search.py "query text" 5
     if len(sys.argv) < 2:
         print(json.dumps({'error': 'Query required'}))
         sys.exit(1)
-    
     query = sys.argv[1]
     top_k = int(sys.argv[2]) if len(sys.argv) > 2 else 5
-    
     results = search_knowledge_base(query, top_k)
     print(json.dumps(results, ensure_ascii=False))

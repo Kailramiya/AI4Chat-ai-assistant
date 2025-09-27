@@ -1,5 +1,5 @@
 {
   "dimension": 384,
-  "num_vectors": 28,
+  "num_vectors": 5,
   "model_name": "sentence-transformers/all-MiniLM-L6-v2"
 }

@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 // Security middleware
 app.use(helmet());
 app.use(cors({
-    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://localhost:3000'],
+    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://localhost:3001','http://localhost:3000','http://127.0.0.1:3001'],
     credentials: true
 }));
 
@@ -80,10 +80,11 @@ function searchKnowledgeBase(query, topK = 5) {
 
 // Chat endpoint
 app.post('/api/chat', async (req, res) => {
+   
     try {
         
         const { message, sessionId } = req.body;
-        
+        console.log('Received message:', message, 'Session ID:', sessionId);
         if (!message || !sessionId) {
             return res.status(400).json({
                 error: 'Message and sessionId are required'
