@@ -1,30 +1,24 @@
-import sys
-import json
-import os
-import numpy as np
-import faiss
+import sys, json, os
+import numpy as np, faiss
 from sentence_transformers import SentenceTransformer
 
-# Resolve paths relative to this file to avoid cwd issues when spawned from Node
-CUR = os.path.dirname(os.path.abspath(__file__))                   # .../data-extraction
-INDEX_DIR = os.path.join(CUR, 'database')                          # .../data-extraction/database
+CUR = os.path.dirname(os.path.abspath(__file__))   # .../data-extraction
+INDEX_DIR = os.path.join(CUR, 'database')
 INDEX_PATH = os.path.normpath(os.path.join(INDEX_DIR, 'faiss.index'))
 META_PATH  = os.path.normpath(os.path.join(INDEX_DIR, 'chunks_metadata.json'))
-
-MODEL_NAME = 'sentence-transformers/all-MiniLM-L6-v2'  # fast, good quality embeddings [web:291]
+MODEL_NAME = 'sentence-transformers/all-MiniLM-L6-v2'
 
 def load_index_and_meta():
     if not os.path.exists(INDEX_PATH):
         raise FileNotFoundError(f"Missing index file: {INDEX_PATH}")
     if not os.path.exists(META_PATH):
         raise FileNotFoundError(f"Missing metadata file: {META_PATH}")
-    index = faiss.read_index(INDEX_PATH)  # FlatIP with normalized embeddings ≈ cosine similarity [web:549]
-    with open(META_PATH, 'r', encoding='utf-8') as f:
-        meta = json.load(f)
+    index = faiss.read_index(INDEX_PATH)
+    meta = json.load(open(META_PATH,'r',encoding='utf-8'))
     return index, meta
 
 def embed_query(model, text):
-    vec = model.encode([text], normalize_embeddings=True)  # normalize for cosine via inner product [web:291][web:549]
+    vec = model.encode([text], normalize_embeddings=True)
     return np.asarray(vec, dtype='float32')
 
 def search_knowledge_base(query, top_k=5):
@@ -34,29 +28,24 @@ def search_knowledge_base(query, top_k=5):
         qv = embed_query(model, query)
         D, I = index.search(qv, int(top_k))
         out = []
-        # Map FAISS indices to metadata rows; guard bounds
         for idx, score in zip(I[0].tolist(), D[0].tolist()):
-            if idx == -1 or idx >= len(meta):
-                continue
+            if idx == -1 or idx >= len(meta): continue
             m = meta[idx]
             out.append({
-                'text': m.get('text', ''),
-                'url': m.get('url', ''),
-                'title': m.get('title', ''),
-                'page_type': m.get('page_type', ''),
+                'text': m.get('text',''),
+                'url': m.get('url',''),
+                'title': m.get('title',''),
+                'page_type': m.get('page_type',''),
                 'score': float(score),
                 'product_info': m.get('product_info', {})
             })
         return out
     except Exception as e:
-        # Return a JSON object with error message; caller should treat non-array as error
         return {'error': str(e)}
 
 if __name__ == '__main__':
-    # CLI usage: python search.py "query text" 5
     if len(sys.argv) < 2:
-        print(json.dumps({'error': 'Query required'}))
-        sys.exit(1)
+        print(json.dumps({'error': 'Query required'})); sys.exit(1)
     query = sys.argv[1]
     top_k = int(sys.argv[2]) if len(sys.argv) > 2 else 5
     results = search_knowledge_base(query, top_k)

@@ -1,62 +1,622 @@
 [
   {
     "title": "Example T-Shirt",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Blue / Small (SKU TBS) in stock, price 11.99; Blue / Medium (SKU TBM) in stock, price 11.99; Blue / Large (SKU TBL) in stock, price 11.99; Green / Small (SKU TGS) in stock, price 11.99; Green / Medium (SKU TGM) in stock, price 11.99; Green / Large (SKU TGL) in stock, price 11.99; Purple / Small (SKU TPS) in stock, price 11.99; Purple / Medium (SKU TPM) in stock, price 11.99; Purple / Large (SKU TPL) in stock, price 11.99. Tags: sample. Options: Colour: Blue, Green, Purple; Size: Small, Medium, Large",
-    "url": "https://example-store.com/products/example-t-shirt",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Blue / Small (SKU TBS) in stock, price 11.99, size Small; Blue / Medium (SKU TBM) in stock, price 11.99, size Medium; Blue / Large (SKU TBL) in stock, price 11.99, size Large; Green / Small (SKU TGS) in stock, price 11.99, size Small; Green / Medium (SKU TGM) in stock, price 11.99, size Medium; Green / Large (SKU TGL) in stock, price 11.99, size Large; Purple / Small (SKU TPS) in stock, price 11.99, size Small; Purple / Medium (SKU TPM) in stock, price 11.99, size Medium; Purple / Large (SKU TPL) in stock, price 11.99, size Large. Options: Colour: Blue, Green, Purple; Size: Small, Medium, Large. Vendor: Product - Multiple Options; Tags: sample",
+    "url": "https://b2b-demo-store.myshopify.com/products/example-t-shirt",
     "page_type": "product",
     "product_info": {
       "id": 6749667524760,
       "handle": "example-t-shirt",
+      "title": "Example T-Shirt",
       "vendor": "Product - Multiple Options",
-      "updated_at": "2025-09-21T11:04:45+01:00"
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "created_at": "2021-05-11T14:39:43+01:00",
+      "updated_at": "2025-09-27T18:50:14+01:00",
+      "url": "https://b2b-demo-store.myshopify.com/products/example-t-shirt",
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/cobalt-blue-t-shirt.jpg?v=1620740393",
+          "alt": "",
+          "position": 1,
+          "id": 29981139075224
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/purple-t-shirt.jpg?v=1620740393",
+          "alt": "",
+          "position": 2,
+          "id": 29981138976920
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/light-green-t-shirt.jpg?v=1620740393",
+          "alt": "",
+          "position": 3,
+          "id": 29981139468440
+        }
+      ],
+      "options": [
+        {
+          "name": "Colour",
+          "position": 1,
+          "values": [
+            "Blue",
+            "Green",
+            "Purple"
+          ]
+        },
+        {
+          "name": "Size",
+          "position": 2,
+          "values": [
+            "Small",
+            "Medium",
+            "Large"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": 39958144057496,
+          "label": "Blue / Small",
+          "color": "Blue",
+          "size": "Small",
+          "sku": "TBS",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144090264,
+          "label": "Blue / Medium",
+          "color": "Blue",
+          "size": "Medium",
+          "sku": "TBM",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144123032,
+          "label": "Blue / Large",
+          "color": "Blue",
+          "size": "Large",
+          "sku": "TBL",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144155800,
+          "label": "Green / Small",
+          "color": "Green",
+          "size": "Small",
+          "sku": "TGS",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144188568,
+          "label": "Green / Medium",
+          "color": "Green",
+          "size": "Medium",
+          "sku": "TGM",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144221336,
+          "label": "Green / Large",
+          "color": "Green",
+          "size": "Large",
+          "sku": "TGL",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144254104,
+          "label": "Purple / Small",
+          "color": "Purple",
+          "size": "Small",
+          "sku": "TPS",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144286872,
+          "label": "Purple / Medium",
+          "color": "Purple",
+          "size": "Medium",
+          "sku": "TPM",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958144319640,
+          "label": "Purple / Large",
+          "color": "Purple",
+          "size": "Large",
+          "sku": "TPL",
+          "barcode": "",
+          "price": "11.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        }
+      ],
+      "best_price": "11.99",
+      "max_price": "11.99",
+      "price_range": "11.99",
+      "materials": "",
+      "care": "",
+      "warranty": "",
+      "shipping_info": "",
+      "size_chart_url": ""
     }
   },
   {
     "title": "Example Pin Badge",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Pineapple (SKU BADGE-PINE) in stock, price 9.99; Lightening (SKU BADGE-LGT) in stock, price 9.99; Watermelon (SKU BADGE-WATER) in stock, price 9.99; Popsicle (SKU BADGE-POP) in stock, price 9.99. Tags: sample. Options: Style: Pineapple, Lightening, Watermelon, Popsicle",
-    "url": "https://example-store.com/products/example-pin-badge",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Pineapple (SKU BADGE-PINE) in stock, price 9.99; Lightening (SKU BADGE-LGT) in stock, price 9.99; Watermelon (SKU BADGE-WATER) in stock, price 9.99; Popsicle (SKU BADGE-POP) in stock, price 9.99. Options: Style: Pineapple, Lightening, Watermelon, Popsicle. Vendor: Product - With Pack Sizes; Tags: sample",
+    "url": "https://b2b-demo-store.myshopify.com/products/example-pin-badge",
     "page_type": "product",
     "product_info": {
       "id": 6749662609560,
       "handle": "example-pin-badge",
+      "title": "Example Pin Badge",
       "vendor": "Product - With Pack Sizes",
-      "updated_at": "2025-09-21T11:04:45+01:00"
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "created_at": "2021-05-11T14:36:33+01:00",
+      "updated_at": "2025-09-27T18:50:14+01:00",
+      "url": "https://b2b-demo-store.myshopify.com/products/example-pin-badge",
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/popsicle-enamel-pin-denim.jpg?v=1620740196",
+          "alt": "",
+          "position": 1,
+          "id": 29981068099736
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/lightning-bolt-enamel-pin-denim.jpg?v=1620740197",
+          "alt": "",
+          "position": 2,
+          "id": 29981068591256
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/pineapple-enamel-pin-denim.jpg?v=1620740197",
+          "alt": "",
+          "position": 3,
+          "id": 29981068230808
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/watermelon-slice-enamel-pin-denim.jpg?v=1620740197",
+          "alt": "",
+          "position": 4,
+          "id": 29981068132504
+        }
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "position": 1,
+          "values": [
+            "Pineapple",
+            "Lightening",
+            "Watermelon",
+            "Popsicle"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": 39958121644184,
+          "label": "Pineapple",
+          "color": "Pineapple",
+          "size": null,
+          "sku": "BADGE-PINE",
+          "barcode": "",
+          "price": "9.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958121676952,
+          "label": "Lightening",
+          "color": "Lightening",
+          "size": null,
+          "sku": "BADGE-LGT",
+          "barcode": "",
+          "price": "9.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958121709720,
+          "label": "Watermelon",
+          "color": "Watermelon",
+          "size": null,
+          "sku": "BADGE-WATER",
+          "barcode": "",
+          "price": "9.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958121742488,
+          "label": "Popsicle",
+          "color": "Popsicle",
+          "size": null,
+          "sku": "BADGE-POP",
+          "barcode": "",
+          "price": "9.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        }
+      ],
+      "best_price": "9.99",
+      "max_price": "9.99",
+      "price_range": "9.99",
+      "materials": "",
+      "care": "",
+      "warranty": "",
+      "shipping_info": "",
+      "size_chart_url": ""
     }
   },
   {
     "title": "Example Handmade Bracelet",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Gold (SKU BRACE-GOLD) in stock, price 19.99; Coloured (SKU BRACE-COLOURED) in stock, price 19.99. Tags: sample. Options: Type: Gold, Coloured",
-    "url": "https://example-store.com/products/example-handmade-bracelet",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Gold (SKU BRACE-GOLD) in stock, price 19.99; Coloured (SKU BRACE-COLOURED) in stock, price 19.99. Options: Type: Gold, Coloured. Vendor: Product - With Price Breaks; Tags: sample",
+    "url": "https://b2b-demo-store.myshopify.com/products/example-handmade-bracelet",
     "page_type": "product",
     "product_info": {
       "id": 6749659365528,
       "handle": "example-handmade-bracelet",
+      "title": "Example Handmade Bracelet",
       "vendor": "Product - With Price Breaks",
-      "updated_at": "2025-09-21T11:04:45+01:00"
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "created_at": "2021-05-11T14:34:31+01:00",
+      "updated_at": "2025-09-27T18:50:14+01:00",
+      "url": "https://b2b-demo-store.myshopify.com/products/example-handmade-bracelet",
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/chakra-bracelet.jpg?v=1620740074",
+          "alt": "",
+          "position": 1,
+          "id": 29981026123928
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/black-buddha-bracelet.jpg?v=1620740074",
+          "alt": "",
+          "position": 2,
+          "id": 29981026091160
+        }
+      ],
+      "options": [
+        {
+          "name": "Type",
+          "position": 1,
+          "values": [
+            "Gold",
+            "Coloured"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": 39958106505368,
+          "label": "Gold",
+          "color": "Gold",
+          "size": null,
+          "sku": "BRACE-GOLD",
+          "barcode": "",
+          "price": "19.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958106538136,
+          "label": "Coloured",
+          "color": "Coloured",
+          "size": null,
+          "sku": "BRACE-COLOURED",
+          "barcode": "",
+          "price": "19.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        }
+      ],
+      "best_price": "19.99",
+      "max_price": "19.99",
+      "price_range": "19.99",
+      "materials": "",
+      "care": "",
+      "warranty": "",
+      "shipping_info": "",
+      "size_chart_url": ""
     }
   },
   {
     "title": "Example Elephant Earrings",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Default Title (SKU EEEAR) in stock, price 14.99. Tags: sample. Options: Title: Default Title",
-    "url": "https://example-store.com/products/example-elephant-earrings",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Default Title (SKU EEEAR) in stock, price 14.99. Options: Title: Default Title. Vendor: Product - No Variants; Tags: sample",
+    "url": "https://b2b-demo-store.myshopify.com/products/example-elephant-earrings",
     "page_type": "product",
     "product_info": {
       "id": 6749656809624,
       "handle": "example-elephant-earrings",
+      "title": "Example Elephant Earrings",
       "vendor": "Product - No Variants",
-      "updated_at": "2025-09-21T11:04:45+01:00"
+      "product_type": "",
+      "tags": [
+        "sample"
+      ],
+      "created_at": "2021-05-11T14:33:01+01:00",
+      "updated_at": "2025-09-27T18:50:14+01:00",
+      "url": "https://b2b-demo-store.myshopify.com/products/example-elephant-earrings",
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/elephant-earrings.jpg?v=1620739983",
+          "alt": "",
+          "position": 1,
+          "id": 29980988637336
+        }
+      ],
+      "options": [
+        {
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": 39958095462552,
+          "label": "Default Title",
+          "color": "Default Title",
+          "size": null,
+          "sku": "EEEAR",
+          "barcode": "",
+          "price": "14.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        }
+      ],
+      "best_price": "14.99",
+      "max_price": "14.99",
+      "price_range": "14.99",
+      "materials": "",
+      "care": "",
+      "warranty": "",
+      "shipping_info": "",
+      "size_chart_url": ""
     }
   },
   {
     "title": "Example Ceramic Mug",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Cat Mom (SKU MUG-CAT) in stock, price 7.99; Best Mom (SKU MUG-MOM) in stock, price 7.99; No.1 Dad (SKU MUG-DAD) in stock, price 7.99. Tags: sample, user:group-1, user:visitors. Options: Style: Cat Mom, Best Mom, No.1 Dad",
-    "url": "https://example-store.com/products/example-ceramic-mug",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.. Variants: Cat Mom (SKU MUG-CAT) in stock, price 7.99; Best Mom (SKU MUG-MOM) in stock, price 7.99; No.1 Dad (SKU MUG-DAD) in stock, price 7.99. Options: Style: Cat Mom, Best Mom, No.1 Dad. Vendor: Product - Single Option; Tags: sample, user:group-1, user:visitors",
+    "url": "https://b2b-demo-store.myshopify.com/products/example-ceramic-mug",
     "page_type": "product",
     "product_info": {
       "id": 6749654974616,
       "handle": "example-ceramic-mug",
+      "title": "Example Ceramic Mug",
       "vendor": "Product - Single Option",
-      "updated_at": "2025-09-21T11:04:45+01:00"
+      "product_type": "",
+      "tags": [
+        "sample",
+        "user:group-1",
+        "user:visitors"
+      ],
+      "created_at": "2021-05-11T14:31:38+01:00",
+      "updated_at": "2025-09-27T18:50:14+01:00",
+      "url": "https://b2b-demo-store.myshopify.com/products/example-ceramic-mug",
+      "images": [
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/best-mom-coffee-mug.jpg?v=1620739901",
+          "alt": "",
+          "position": 1,
+          "id": 29980958032024
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/1-dad-coffee-mug.jpg?v=1620739901",
+          "alt": "",
+          "position": 2,
+          "id": 29980957966488
+        },
+        {
+          "src": "https://cdn.shopify.com/s/files/1/0565/7500/0728/products/cat-mom-coffee-mug.jpg?v=1620739901",
+          "alt": "",
+          "position": 3,
+          "id": 29980957835416
+        }
+      ],
+      "options": [
+        {
+          "name": "Style",
+          "position": 1,
+          "values": [
+            "Cat Mom",
+            "Best Mom",
+            "No.1 Dad"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": 39958091301016,
+          "label": "Cat Mom",
+          "color": "Cat Mom",
+          "size": null,
+          "sku": "MUG-CAT",
+          "barcode": "",
+          "price": "7.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958091333784,
+          "label": "Best Mom",
+          "color": "Best Mom",
+          "size": null,
+          "sku": "MUG-MOM",
+          "barcode": "",
+          "price": "7.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        },
+        {
+          "id": 39958091366552,
+          "label": "No.1 Dad",
+          "color": "No.1 Dad",
+          "size": null,
+          "sku": "MUG-DAD",
+          "barcode": "",
+          "price": "7.99",
+          "compare_at_price": "",
+          "available": true,
+          "inventory_quantity": null,
+          "weight": null,
+          "weight_unit": "",
+          "requires_shipping": true,
+          "taxable": true,
+          "image_src": ""
+        }
+      ],
+      "best_price": "7.99",
+      "max_price": "7.99",
+      "price_range": "7.99",
+      "materials": "",
+      "care": "",
+      "warranty": "",
+      "shipping_info": "",
+      "size_chart_url": ""
     }
   }
 ]

@@ -131,6 +131,7 @@ app.post('/api/chat', async (req, res) => {
         }
 
         const normResults = Array.isArray(rawResults) ? rawResults : [];
+         response = await generateResponse(message, normResults, session);
         if (!Array.isArray(rawResults)) {
         console.warn('searchResults not array:', rawResults);
         }
@@ -237,17 +238,19 @@ async function handleOrderTracking(message, session) {
     }
 }
 
-async function generateResponse(message, results, session) {
-  const top = Array.isArray(results) ? results.slice(0, 3) : [];
-  if (top.length === 0) {
-    return "I'm sorry, I couldn't find specific information about that. Could you please rephrase your question or ask about something else I might be able to help with?";
-  }
-  if (isProductQuery(message)) {
-    return generateProductResponse(message, top);
-  }
-  const context = top.map(r => (r.text || '').substring(0, 300)).join('\n\n');
-  return `Based on the information I found:\n\n${context}\n\nWould you like me to provide more specific details about any particular aspect?`;
-}
+
+
+// async function generateResponse(message, results, session) {
+//   const top = Array.isArray(results) ? results.slice(0, 3) : [];
+//   if (top.length === 0) {
+//     return "I'm sorry, I couldn't find specific information about that. Could you please rephrase your question or ask about something else I might be able to help with?";
+//   }
+//   if (isProductQuery(message)) {
+//     return generateProductResponse(message, top);
+//   }
+//   const context = top.map(r => (r.text || '').substring(0, 300)).join('\n\n');
+//   return `Based on the information I found:\n\n${context}\n\nWould you like me to provide more specific details about any particular aspect?`;
+// }
 
 
 function isProductQuery(message) {
@@ -260,24 +263,218 @@ function isProductQuery(message) {
     return productKeywords.some(keyword => lowerMessage.includes(keyword));
 }
 
-function generateProductResponse(message, searchResults) {
-    let response = "Here's what I found about that product:\n\n";
-    
-    searchResults.forEach((result, index) => {
-        if (result.product_info && Object.keys(result.product_info).length > 0) {
-            const product = result.product_info;
-            response += `**${product.name || result.title}**\n`;
-            if (product.price) response += `Price: ${product.price}\n`;
-            if (product.description) response += `${product.description.substring(0, 200)}...\n`;
-            response += `More details: ${result.url}\n\n`;
-        } else {
-            response += `${result.text.substring(0, 200)}...\n`;
-            response += `Source: ${result.url}\n\n`;
-        }
-    });
-    
-    return response;
+function filterByAttributes(hits, color, size) {
+  if (!color && !size) return hits;
+  const pick = [];
+  for (const h of hits) {
+    const pi = h.product_info || {};
+    const variants = Array.isArray(pi.variants) ? pi.variants : [];
+    const hasVariant = variants.some(v =>
+      (!color || (v.color || '').toLowerCase() === color) &&
+      (!size || (v.size || '').toLowerCase() === size)
+    );
+    const text = (h.text || '').toLowerCase();
+    const okText = (!color || text.includes(color)) && (!size || text.includes(size));
+    if (hasVariant || okText) pick.push(h);
+  }
+  return pick.length ? pick : hits;
 }
+
+function formatProductAnswer(query, hits) {
+  const lower = query.toLowerCase();
+
+  // intents
+  const priceIntent = /(price|cost|how much|₹|\$)/i.test(lower);
+  const availabilityIntent = /(available|in stock|out of stock|stock)/i.test(lower);
+  const materialIntent = /(material|quality|fabric|cotton|leather|steel|wash|care|durable|handmade)/i.test(lower);
+  const optionsIntent = /(size|sizes|color|colour|colors|options|variants)/i.test(lower);
+  const shippingIntent = /(shipping|delivery|returns|refund|warranty policy|return policy)/i.test(lower);
+  const warrantyIntent = /(warranty|guarantee)/i.test(lower);
+  const imageIntent = /(image|photo|picture)/i.test(lower);
+  const weightIntent = /(weight|heavy|light)/i.test(lower);
+
+  // attributes
+  const color = (lower.match(/\b(blue|green|purple|red|black|white|gold|silver)\b/) || [])[1];
+  const sizeRaw = (lower.match(/\b(xs|s|m|l|xl|xxl|small|medium|large)\b/) || [])[1];
+  const size = sizeRaw ? sizeRaw.replace('small','s').replace('medium','m').replace('large','l') : null;
+
+  // dedupe by URL
+  const seen = new Set();
+  const unique = [];
+  for (const h of hits) {
+    if (h.url && !seen.has(h.url)) {
+      seen.add(h.url);
+      unique.push(h);
+    }
+  }
+
+  // filter by requested attributes, then take one best
+  const filtered = filterByAttributes(unique, color, size);
+  const picked = filtered.slice(0, 1);
+
+  const out = [];
+  for (const r of picked) {
+    const pi = r.product_info || {};
+    const title = r.title || 'Product';
+    const url = r.url || '';
+    const snippet = (r.text || '').slice(0, 220).trim();
+    const variants = Array.isArray(pi.variants) ? pi.variants : [];
+    const vMatch = variants.find(v =>
+      (!color || (v.color || '').toLowerCase() === color) &&
+      (!size || (v.size || '').toLowerCase() === size)
+    ) || variants[0];
+
+    // primary image if present
+    const images = Array.isArray(pi.images) ? pi.images : [];
+    const mainImage = images.length ? images[0] : null;
+    const mainImageSrc = mainImage && (mainImage.src || mainImage.url || mainImage.image || '');
+
+    // facts from new fields
+    const warranty = (pi.warranty || '').trim();
+    const shippingInfo = (pi.shipping_info || '').trim();
+    const materials = (pi.materials || '').trim();
+    const care = (pi.care || '').trim();
+
+    // build response lines
+    let lines = [title];
+
+    // Price and discount handling
+    if (priceIntent && (vMatch || pi.best_price)) {
+      if (vMatch && vMatch.price) {
+        const cur = vMatch.price;
+        const was = (vMatch.compare_at_price || '').trim();
+        const avail = vMatch.available ? '(in stock)' : '(out of stock)';
+        if (was) {
+          lines.push(`Price: ${cur} (was ${was}) ${avail}`);
+        } else {
+          lines.push(`Price: ${cur} ${avail}`);
+        }
+      } else if (pi.best_price) {
+        const range = (pi.price_range || '').trim();
+        lines.push(`Price from: ${range || pi.best_price}`);
+      }
+    }
+
+    // Availability handling
+    if (availabilityIntent && vMatch) {
+      lines.push(`Availability: ${vMatch.available ? 'in stock' : 'out of stock'}`);
+      if (vMatch.price) {
+        const was = (vMatch.compare_at_price || '').trim();
+        lines.push(`Price: ${vMatch.price}${was ? ` (was ${was})` : ''}`);
+      }
+    }
+
+    // Materials / Care
+    if (materialIntent) {
+      if (materials) lines.push(`Materials: ${materials}`);
+      if (care) lines.push(`Care: ${care}`);
+      if (!materials && !care) lines.push(snippet + '…');
+    }
+
+    // Options: show colors/sizes lists
+    if (optionsIntent) {
+      if (variants.length) {
+        const colors = [...new Set(variants.map(v => (v.color || '').trim()).filter(Boolean))];
+        const sizes = [...new Set(variants.map(v => (v.size || '').trim()).filter(Boolean))];
+        if (colors.length) lines.push(`Colors: ${colors.join(', ')}`);
+        if (sizes.length) lines.push(`Sizes: ${sizes.join(', ')}`);
+      } else {
+        lines.push(snippet + '…');
+      }
+    }
+
+    // Warranty
+    if (warrantyIntent) {
+      if (warranty) {
+        lines.push(`Warranty: ${warranty}`);
+      } else {
+        lines.push('Warranty details not specified on the product page.');
+      }
+    }
+
+    // Shipping / Returns policy
+    if (shippingIntent) {
+      if (shippingInfo) {
+        lines.push(`Shipping: ${shippingInfo}`);
+      } else {
+        lines.push('Shipping/returns details not specified here. Check the store policy page via the link below.');
+      }
+    }
+
+    // Image
+    if (imageIntent) {
+      if (mainImageSrc) {
+        lines.push(`Image: ${mainImageSrc}`);
+      } else {
+        lines.push('No image found in metadata; see product page.');
+      }
+    }
+
+    // Weight
+    if (weightIntent && vMatch) {
+      const w = (vMatch.weight != null && vMatch.weight !== '') ? vMatch.weight : null;
+      const wu = (vMatch.weight_unit || '').trim();
+      if (w) {
+        lines.push(`Weight: ${w}${wu ? ' ' + wu : ''}`);
+      } else {
+        lines.push('Weight not specified for this variant.');
+      }
+    }
+
+    // General fallback when no specific intent triggered
+    if (
+      !priceIntent && !availabilityIntent && !materialIntent &&
+      !optionsIntent && !warrantyIntent && !shippingIntent &&
+      !imageIntent && !weightIntent
+    ) {
+      // brief general answer that includes price-from if available
+      if (pi.best_price) lines.push(`Price from: ${pi.best_price}`);
+      if (materials) lines.push(`Materials: ${materials}`);
+      if (care) lines.push(`Care: ${care}`);
+      if (variants.length && vMatch && typeof vMatch.available === 'boolean') {
+        lines.push(`Availability: ${vMatch.available ? 'in stock' : 'out of stock'}`);
+      }
+      if (lines.length === 1) {
+        lines.push(snippet + '…');
+      }
+    }
+
+    lines.push(`More details: ${url}`);
+    out.push(lines.join('\n'));
+  }
+
+  return out.join('\n\n');
+}
+
+
+
+function dedupeByUrl(hits) {
+  const seen = new Set();
+  const out = [];
+  for (const h of hits) {
+    if (h.url && !seen.has(h.url)) {
+      seen.add(h.url);
+      out.push(h);
+    }
+  }
+  return out;
+}
+
+
+
+async function generateResponse(message, results, session) {
+  const top = Array.isArray(results) ? results.slice(0, 3) : [];
+  if (top.length === 0) {
+    return "I'm sorry, I couldn't find specific information about that. Could you please rephrase your question or ask about something else I might be able to help with?";
+  }
+  if (isProductQuery(message)) {
+  return formatProductAnswer(message, top);
+}
+
+  const context = top.map(r => (r.text || '').substring(0, 300)).join('\n\n');
+  return `Based on the information I found:\n\n${context}\n\nWould you like me to provide more specific details about any particular aspect?`;
+}
+
 
 function generateMockTrackingInfo(orderId) {
     // In a real app, this would query your order management system
