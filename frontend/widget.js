@@ -8,7 +8,7 @@
         constructor() {
             this.isOpen = false;
             this.sessionId = this.generateSessionId();
-            this.apiBaseUrl = 'http://127.0.0.1:3000'; // Change this for production
+            this.apiUrl = window.location.origin + '/api/chat';// Change this for production
             this.messages = [];
             
             this.init();
@@ -320,7 +320,7 @@
             
             try {
                 console.log(`${this.apiBaseUrl}/api/chat`);
-                const response = await fetch(`${this.apiBaseUrl}/api/chat`, {
+                const response = await fetch(`${this.apiBaseUrl}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
