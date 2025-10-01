@@ -8,7 +8,7 @@
         constructor() {
             this.isOpen = false;
             this.sessionId = this.generateSessionId();
-            this.apiUrl = window.location.origin + '/api/chat';// Change this for production
+            this.apiUrl = 'https://ai-4-chat-ai-assistant.vercel.app' + '/api/chat';// Change this for production
             this.messages = [];
             
             this.init();
