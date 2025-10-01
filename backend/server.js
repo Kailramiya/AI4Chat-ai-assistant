@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 // Security middleware
 app.use(helmet());
 app.use(cors({
-    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['https://ai-4-chat-ai-assistant.vercel.app/'],
+    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://localhost:3001','http://localhost:3000','http://127.0.0.1:3001','https://ai-4-chat-ai-assistant.vercel.app/'],
     credentials: true
 }));
 
@@ -38,7 +38,40 @@ app.get('/health', (req, res) => {
 });
 
 
+function isPersonalizedQuery(message) {
+    const personalKeywords = [
+        'my order', 'my refund', 'my account', 'my purchase',
+        'my delivery', 'my package', 'my return', 'my payment',
+        'my shipping', 'i ordered', 'i bought', 'i purchased',
+        'i paid', 'i returned'
+    ];
+    
+    const lowerMessage = message.toLowerCase();
+    return personalKeywords.some(keyword => lowerMessage.includes(keyword));
+}
 
+function handlePersonalizedQuery(message) {
+    // Extract query type
+    const lowerMessage = message.toLowerCase();
+    
+    if (lowerMessage.includes('order') || lowerMessage.includes('delivery') || lowerMessage.includes('package')) {
+        return "To check your order status, please provide your order number. If you don't have it, you can find it in your order confirmation email.";
+    }
+    
+    if (lowerMessage.includes('refund')) {
+        return "To check your refund status, please provide your order number and the date of your refund request. You can also check your refund status in your account dashboard.";
+    }
+    
+    if (lowerMessage.includes('return')) {
+        return "For return status, please provide your return authorization number. You can find this in your return confirmation email.";
+    }
+    
+    if (lowerMessage.includes('payment')) {
+        return "For payment-related queries, please check your order confirmation email or your account dashboard. For security reasons, I can't access specific payment details here.";
+    }
+    
+    return "I notice you're asking about your personal information. To help you better, please provide relevant details like your order number or reference number. Alternatively, you can check your account dashboard for this information.";
+}
 
 // Search function using Python script
 function searchKnowledgeBase(query, topK = 5) {
@@ -463,6 +496,9 @@ function dedupeByUrl(hits) {
 
 
 async function generateResponse(message, results, session) {
+  if (isPersonalizedQuery(message)) {
+        return handlePersonalizedQuery(message);
+    }
   const top = Array.isArray(results) ? results.slice(0, 3) : [];
   if (top.length === 0) {
     return "I'm sorry, I couldn't find specific information about that. Could you please rephrase your question or ask about something else I might be able to help with?";

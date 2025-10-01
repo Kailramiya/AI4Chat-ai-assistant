@@ -1,21 +1,18 @@
 {
-  "name": "backend",
+  "name": "ai-assistant",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-   "start": "serve frontend"
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
+    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.2",
-    "express": "^5.1.0",
-    "express-rate-limit": "^8.1.0",
-    "helmet": "^8.1.0",
-    "serve": "^14.0.0"
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
