@@ -1,11 +1,22 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "frontend/**/*", "use": "@vercel/static" }
-  ],
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "frontend",
+  "public": true,
+  "cleanUrls": true,
   "routes": [
-    { "src": "/", "dest": "/frontend/index.html" },
-    { "src": "/widget.js", "dest": "/frontend/widget.js" },
-    { "src": "/(.*)", "dest": "/frontend/$1" }
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/widget.js",
+      "dest": "/widget.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ]
 }
