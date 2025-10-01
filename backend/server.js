@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 // Security middleware
 app.use(helmet());
 app.use(cors({
-    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://localhost:3001','http://localhost:3000','http://127.0.0.1:3001'],
+    origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['https://ai-4-chat-ai-assistant.vercel.app/'],
     credentials: true
 }));
 
