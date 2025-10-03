@@ -4,13 +4,11 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { spawn } = require('child_process');
 const path = require('path');
-const fs = require('fs');
 
-// Load environment variables
-require('dotenv').config();
+
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
 
 // Security middleware
 app.use(helmet());
