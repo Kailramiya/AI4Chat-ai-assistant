@@ -1,5 +1,6 @@
 (function() {
     // Prevent multiple instances
+    console.log('Initializing AI Widget...');
     if (window.AIAssistantWidget) {
         return;
     }
