@@ -10,6 +10,19 @@
         <h1>AI Chat Assistant</h1>
         <p>The chat widget should appear in the bottom right corner.</p>
     </div>
-    <script src="widget.js"></script>
+    
+    <!-- Add defer attribute and error handling -->
+    <script src="widget.js" defer onerror="console.error('Failed to load widget.js')"></script>
+    
+    <!-- Add a script to verify loading -->
+    <script>
+        window.addEventListener('load', () => {
+            if (!window.AIAssistantWidget) {
+                console.error('Widget failed to initialize');
+            } else {
+                console.log('Widget loaded successfully');
+            }
+        });
+    </script>
 </body>
 </html>
