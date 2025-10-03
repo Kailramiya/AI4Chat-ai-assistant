@@ -4,28 +4,21 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { spawn } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 
-
+// Load environment variables
+require('dotenv').config();
 
 const app = express();
-const PORT =  3000;
+const PORT = process.env.PORT || 3000;
 
 // Security middleware
 app.use(helmet());
 app.use(cors({
     origin: 'https://ai-4-chat-ai-assistant.vercel.app',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-    preflightContinue: false,
-    optionsSuccessStatus: 204
-}));
-app.options('*', cors({
-    origin: 'https://ai-4-chat-ai-assistant.vercel.app',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
+
 // Rate limiting
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes

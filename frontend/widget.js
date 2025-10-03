@@ -10,7 +10,7 @@
             console.log('AIAssistantWidget constructor called');
             this.isOpen = false;
             this.sessionId = this.generateSessionId();
-            this.apiBaseUrl = 'https://ai4chat-ai-assistant.onrender.com'; // Change this for production
+            this.apiBaseUrl = 'https://ai4chat-ai-assistant.onrender.com/'; // Change this for production
             this.messages = [];
             
             this.init();
