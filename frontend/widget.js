@@ -8,7 +8,7 @@
         constructor() {
             this.isOpen = false;
             this.sessionId = this.generateSessionId();
-            this.apiBaseUrl = 'http://127.0.0.1:3000'; // Change this for production
+            this.apiBaseUrl = 'https://ai-4-chat-ai-assistant-backend.vercel.app'; // Change this for production
             this.messages = [];
             
             this.init();
