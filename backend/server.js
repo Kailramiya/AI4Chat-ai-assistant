@@ -22,7 +22,12 @@ app.use(cors({
     preflightContinue: false,
     optionsSuccessStatus: 204
 }));
-
+app.options('*', cors({
+    origin: 'https://ai-4-chat-ai-assistant.vercel.app',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
 // Rate limiting
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
