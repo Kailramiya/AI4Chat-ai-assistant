@@ -11,18 +11,15 @@
         <p>The chat widget should appear in the bottom right corner.</p>
     </div>
     
-    <!-- Add defer attribute and error handling -->
-    <script src="widget.js" defer onerror="console.error('Failed to load widget.js')"></script>
-    
-    <!-- Add a script to verify loading -->
+    <!-- Update script path and add debugging -->
     <script>
-        window.addEventListener('load', () => {
-            if (!window.AIAssistantWidget) {
-                console.error('Widget failed to initialize');
-            } else {
-                console.log('Widget loaded successfully');
-            }
-        });
+        console.log('Page loading...');
     </script>
+    
+    <script 
+        src="/widget.js" 
+        onerror="console.error('Failed to load widget.js - Check network tab for details')"
+        onload="console.log('Widget.js loaded successfully')"
+    ></script>
 </body>
 </html>
