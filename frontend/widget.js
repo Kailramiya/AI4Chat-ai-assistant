@@ -1,12 +1,13 @@
 (function() {
     // Prevent multiple instances
-    console.log('Initializing AI Widget...');
+    
     if (window.AIAssistantWidget) {
         return;
     }
 
     class AIAssistantWidget {
         constructor() {
+            console.log('AIAssistantWidget constructor called');
             this.isOpen = false;
             this.sessionId = this.generateSessionId();
             this.apiBaseUrl = 'https://ai-4-chat-ai-assistant-backend.vercel.app'; // Change this for production
