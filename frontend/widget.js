@@ -10,7 +10,7 @@
             console.log('AIAssistantWidget constructor called');
             this.isOpen = false;
             this.sessionId = this.generateSessionId();
-            this.apiBaseUrl = 'http://localhost:3000'; // Change this for production
+            this.apiBaseUrl = 'https://ai-4-chat-ai-assistant-backend.vercel.app'; // Change this for production
             this.messages = [];
             
             this.init();
@@ -328,6 +328,7 @@
             
             try {
                 console.log(`${this.apiBaseUrl}/api/chat`);
+                console.log(this.sessionId);
                 const response = await fetch(`${this.apiBaseUrl}/api/chat`, {
                     method: 'POST',
                     headers: {
