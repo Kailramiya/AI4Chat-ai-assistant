@@ -19,9 +19,15 @@
         }
         
         init() {
-            this.createStyles();
-            this.createWidget();
-            this.attachEventListeners();
+            try {
+                this.createStyles();
+                this.createWidget();
+                this.attachEventListeners();
+                console.log('AI Widget initialized successfully');
+                window.AIAssistantWidget = this;  // Make sure this is set
+            } catch (error) {
+                console.error('Failed to initialize AI Widget:', error);
+            }
         }
         
         createStyles() {
