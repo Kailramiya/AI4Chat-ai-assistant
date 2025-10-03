@@ -394,9 +394,11 @@
     // Initialize widget when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM fully loaded and parsed');
             window.AIAssistantWidget = new AIAssistantWidget();
         });
     } else {
+        console.log('DOM already loaded');
         window.AIAssistantWidget = new AIAssistantWidget();
     }
 })();
