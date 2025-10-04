@@ -328,7 +328,12 @@
             
             try {
                 console.log(`${this.apiBaseUrl}/api/chat`);
-                console.log(this.sessionId);
+                fetch('https://ai4chat-ai-assistant.onrender.com/test-cors')
+                .then(r => r.json())
+                .then(console.log)
+                .catch(console.error);
+
+                
                 const response = await fetch(`${this.apiBaseUrl}/api/chat`, {
                     method: 'POST',
                     headers: {

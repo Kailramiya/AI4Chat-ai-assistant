@@ -21,6 +21,11 @@ app.use(
     credentials: true,
   })
 );
+app.options('*', cors()); // enable preflight for all routes
+app.get('/test-cors', (req, res) => {
+    res.json({ msg: 'CORS works!' });
+});
+
 app.use(express.json());
 // Rate limiting
 const limiter = rateLimit({
