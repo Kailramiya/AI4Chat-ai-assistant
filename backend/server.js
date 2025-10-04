@@ -13,12 +13,14 @@ const PORT =3000;
 
 // Security middleware
 app.use(helmet());
-app.use(cors({
-    origin: 'https://ai-4-chat-ai-assistant.vercel.app',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://ai-4-chat-ai-assistant.vercel.app", // your frontend URL
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 // Rate limiting
 const limiter = rateLimit({
