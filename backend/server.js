@@ -21,7 +21,8 @@ app.use(
     credentials: true,
   })
 );
-app.options('*', cors()); // enable preflight for all routes
+app.use(cors(corsOptions));
+// enable preflight for all routes
 app.get('/test-cors', (req, res) => {
     res.json({ msg: 'CORS works!' });
 });
