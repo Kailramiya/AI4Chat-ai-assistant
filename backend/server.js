@@ -81,7 +81,7 @@ function searchKnowledgeBase(query, topK = 5) {
     const projectRoot = path.join(__dirname, '..'); // ai-assistant root
     
     return new Promise((resolve, reject) => {
-        const pythonScript = path.join(__dirname, '..', 'data-extraction', 'search.py');
+        const pythonScript = path.join(__dirname, 'data-extraction', 'search.py');
         const python = process.env.PYTHON_PATH || 'python';
         
         const proc = spawn(python, [pythonScript, query, topK.toString()], {

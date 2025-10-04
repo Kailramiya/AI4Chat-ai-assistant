@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ai-chat-backend
+    env: node
+    buildCommand: npm install && pip install -r requirements.txt
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: PYTHON_PATH
+        value: python3
