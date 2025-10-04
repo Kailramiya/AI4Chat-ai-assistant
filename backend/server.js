@@ -13,23 +13,22 @@ const PORT =3000;
 
 // Security middleware
 const corsOptions = {
-    origin: ['https://ai-4-chat-ai-assistant.vercel.app', 'http://localhost:3000'],
+    origin: true, // This allows all origins
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     credentials: true,
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    preflightContinue: false
 };
 
 app.use(cors(corsOptions));
 
-app.options('/api/chat', cors(corsOptions));
-app.options('/api/track-order', cors(corsOptions));
-app.options('/health', cors(corsOptions));
+
 
 // Move this after CORS middleware
 app.use(helmet({
-    crossOriginResourcePolicy: { policy: "cross-origin" },
-    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" }
+    crossOriginResourcePolicy: false,
+    crossOriginOpenerPolicy: false
 }));
 
 app.use(express.json());
