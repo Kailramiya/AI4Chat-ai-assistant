@@ -1,9 +1,7 @@
 setuptools
-wheel
 numpy==1.24.3
 faiss-cpu==1.7.4
 scikit-learn==1.2.2
-pandas==2.0.2
 python-dotenv==1.0.0
 transformers==4.29.2
 sentence-transformers==2.2.2
