@@ -15,7 +15,7 @@ const PORT =3000;
 app.use(helmet());
 app.use(
   cors({
-    origin: "https://ai-4-chat-ai-assistant.vercel.app", // your frontend URL
+    origin: '*', // your frontend URL
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
