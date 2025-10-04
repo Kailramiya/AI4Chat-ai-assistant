@@ -337,7 +337,8 @@
                     body: JSON.stringify({
                         message: message,
                         sessionId: this.sessionId
-                    })
+                    }),
+                    credentials: 'include'
                 });
                 
                 if (!response.ok) {
