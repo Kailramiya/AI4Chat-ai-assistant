@@ -22,8 +22,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Add OPTIONS handler for preflight requests
-app.options('*', cors(corsOptions));
+app.options('/api/chat', cors(corsOptions));
+app.options('/api/track-order', cors(corsOptions));
+app.options('/health', cors(corsOptions));
 
 // Move this after CORS middleware
 app.use(helmet({
