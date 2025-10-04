@@ -12,18 +12,24 @@ const app = express();
 const PORT =3000;
 
 // Security middleware
-app.use(helmet());
 const corsOptions = {
-  origin: 'https://ai-4-chat-ai-assistant.vercel.app',
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+    origin: ['https://ai-4-chat-ai-assistant.vercel.app', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+    credentials: true,
+    optionsSuccessStatus: 200
 };
+
 app.use(cors(corsOptions));
-// enable preflight for all routes
-app.get('/test-cors', (req, res) => {
-    res.json({ msg: 'CORS works!' });
-});
+
+// Add OPTIONS handler for preflight requests
+app.options('*', cors(corsOptions));
+
+// Move this after CORS middleware
+app.use(helmet({
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" }
+}));
 
 app.use(express.json());
 // Rate limiting
