@@ -12,13 +12,24 @@ const app = express();
 const PORT =3000;
 
 // Security middleware
+const allowedOrigins = [
+    'https://ai-4-chat-ai-assistant.vercel.app',
+    'http://localhost:3000',
+    'http://localhost:5000'
+];
+app.set('trust proxy', 1);
 const corsOptions = {
-    origin: true, // This allows all origins
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     credentials: true,
-    optionsSuccessStatus: 200,
-    preflightContinue: false
+    optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
@@ -27,9 +38,10 @@ app.use(cors(corsOptions));
 
 // Move this after CORS middleware
 app.use(helmet({
-    crossOriginResourcePolicy: false,
-    crossOriginOpenerPolicy: false
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" }
 }));
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 // Rate limiting

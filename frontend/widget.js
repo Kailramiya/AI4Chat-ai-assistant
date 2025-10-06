@@ -328,17 +328,18 @@
             
             try {
                 console.log(`${this.apiBaseUrl}/api/chat`);
-                fetch('https://ai4chat-ai-assistant.onrender.com/test-cors')
-                .then(r => r.json())
-                .then(console.log)
-                .catch(console.error);
+                
 
                 
                 const response = await fetch(`${this.apiBaseUrl}/api/chat`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Origin': 'https://ai-4-chat-ai-assistant.vercel.app',
+                        'Accept': 'application/json',
+
                     },
+                    mode: 'cors',
                     body: JSON.stringify({
                         message: message,
                         sessionId: this.sessionId
